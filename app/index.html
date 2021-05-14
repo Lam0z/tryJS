@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Project</title>
+</head>
+<body class="bg-success">
+    <div class="container">
+        <div class="row ">
+            <div class="col text-center"> <h1>Список задач:</h1></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col">
+                <article class="tasks">
+                    <div class="row justify-content-center">
+                        <div class="col-10 ">
+                            <ul class=" list-group tasks__list">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tasks__field-wrapper">
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <textarea class="tasks__field " placeholder="input your message here..."></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-6 ">
+                                <p class="tasks__rule-info text-center">
+                                    max length <span>0</span>/50
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tasks__btns-wrapper">
+                        <div class="row justify-content-center ">
+                            <div class="col-5">
+                                <button class="btn btn-secondary  btn-block tasks__priority-btn">Обычная задача </button>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-5 "><button class="btn   btn-primary btn-block tasks__btn" >Добавить</button></div>
+                        </div>
+                    </div>
+                
+                </article>
+            </div>
+        </div>
+    </div>
+   <template id="list-item">
+    <li class="list-group-item tasks__item">
+        <span class="tasks__text"></span>
+        <span class="close-span">X</span>
+    </li>
+   </template>
+   
+
+
+
+    <script src="js/main.min.js"></script>
+</body>
+</html>
