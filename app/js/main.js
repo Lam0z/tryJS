@@ -82,3 +82,21 @@ messageField.addEventListener('keydown',(e)=>{
     }
 })
 tasksSendBtn.addEventListener('click',createElement)
+
+// GALLERY code
+
+const bigImgae=document.querySelector('.gallery__big-image img')
+const previewsImages=document.querySelectorAll('.gallery__item img')
+// console.log(bigImgae,prewiewsImages);
+let addСlickHandler=(item)=>{
+    item.addEventListener('click',()=>{
+        bigImgae.src=item.src 
+        for (let i = 0; i < previewsImages.length; i++) {
+            previewsImages[i].classList.remove('active')
+        }
+        item.classList.add('active')
+    })
+}
+for (let i = 0; i < previewsImages.length; i++) {
+    addСlickHandler(previewsImages[i])  
+}

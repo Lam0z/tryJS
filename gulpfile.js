@@ -23,10 +23,10 @@ function styles(){
 }
 function scripts(){
     return src(['app/js/**/*.js','!app/js/**/*.min.js'])
-    // .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(concat('main.min.js'))
-    // .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write())
     .pipe(dest('app/js/'))
     .pipe(browserSync.stream());
 }
