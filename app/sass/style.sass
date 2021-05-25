@@ -10,6 +10,8 @@ body
 h1
     // font-size: 20px
     // text-align: center
+h1
+    text-align: center
 img
     max-width: 100%
     // max-height: 100%
@@ -84,7 +86,39 @@ img
 .active
     border: 2px solid white
     filter: sepia(45%)
+
+// Slider styles
+.slider 
+    width: 600px
+    margin: 0 auto
+    border: 1px solid #000
+    overflow: hidden
+    display: grid
+    grid-template-rows: 1fr auto
+    &__container
+        display: flex
+        
+        // transform: translateX(-100px)
+    &__item 
+        width: 200px
+        height: 100px
+        &:nth-child(1n)
+            background: blue
+        &:nth-child(2n)
+            background: white
+        &:nth-child(3n)
+            background: red
+    &__controls 
+        // grid-column: 2/3
+        // grid-row: 2/3
+        // justify-self: center
+        
+        
+
+.wrapper 
     
+
+
 
 
 
