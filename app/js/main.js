@@ -103,29 +103,53 @@
 
 const sliderBtns=document.querySelectorAll('.slider__btn')
 const slider=document.querySelector('.slider__container')
+const wrapper=document.querySelector('.slider')
+const sliderItem=document.querySelectorAll('.slider__item')
+const slidesToShow=3
+
+
+
+for(let item of sliderItem){
+    item.style.minWidth=wrapper.offsetWidth/slidesToShow+'px'
+
+}
+
+console.log(sliderItem[1].offsetWidth);
 let pixels=0
+sliderBtns[0].disabled=true
 for(let btn of sliderBtns){
     btn.addEventListener('click',(e)=>{
-       if(pixels==300){
-        sliderBtns[1].disabled=true
-       }else{
-        sliderBtns[1].disabled=false
-       }
+        
 
         if(e.target.classList.contains('next')){
-            slider.style.transform+='translateX(-150px)'
-            pixels+=150
+            slider.style.transform+=`translateX(-${sliderItem[0].offsetWidth}px)`
+            pixels+=sliderItem[0].offsetWidth
+            if(pixels>0){
+
+                sliderBtns[0].disabled=false
+            }
+            if(pixels===600){
+                sliderBtns[1].disabled=true
+
+            }
             
         }
-        
-        
+
         if(e.target.classList.contains('prev')){
             
-            slider.style.transform
-            +='translateX(150px)'
-            pixels-=150
+            slider.style.transform+=`translateX(${sliderItem[0].offsetWidth}px)`
+            pixels-=sliderItem[0].offsetWidth
+            if(pixels==0){
+                sliderBtns[0].disabled=true
+            }
+            if(pixels<=600){
+                sliderBtns[1].disabled=false
+
+            }
+                
+            
             
         }
-        console.log(pixels);
+        
     })
 }
