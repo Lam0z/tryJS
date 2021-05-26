@@ -4,7 +4,7 @@
 // const tasksList=document.querySelector('.tasks__list')
 // const templateListItem=document.querySelector("#list-item").content
 // const priorityBtn=document.querySelector('.tasks__priority-btn')
-// let textInfo=document.createElement('p')
+// let textInfo=document.createL('p')
 // textInfo.textContent='Список задач пуст!'
 // textInfo.classList.add('text-center' ,'font-weight-bold', 'text-light')
 
@@ -12,16 +12,16 @@
 // // if(messageField.value.length<=5){
 // //     tasksSendBtn.setAttribute('disabled','disabled')
 // // }
-// let addClosehandler=(closeBtn,element)=>{
+// let addClosehandler=(closeBtn,L)=>{
 //     closeBtn.addEventListener('click',()=>{
-//         element.remove()
+//         L.remove()
 //         if(tasksList.children.length==0){
 //             tasksList.appendChild(textInfo)
 //         }
 //     })
 // }
 
-// let createElement=()=>{
+// let createL=()=>{
 //     let clonedTemplate=templateListItem.cloneNode('true')
 //     let item=clonedTemplate.querySelector('.tasks__item')
 //     let listMessage=item.querySelector('.tasks__text')
@@ -78,10 +78,10 @@
 //     if(e.key==='Enter'){
 //         e.preventDefault()
 //         console.log('press');
-//         createElement()
+//         createL()
 //     }
 // })
-// tasksSendBtn.addEventListener('click',createElement)
+// tasksSendBtn.addEventListener('click',createL)
 
 // // GALLERY code
 
@@ -176,3 +176,26 @@
 
 // }
 
+const accordeonLinks=document.querySelectorAll('.accordeon__link')
+const accordeonText=document.querySelectorAll('.accordeon__text')
+
+
+// for (let i=0;i<accordeonLinks.length;i++){
+//     // console.log(accordeonLinks[i]);
+    
+// }
+let showText=(link,text)=>{
+    link.addEventListener('click',(event)=>{
+        // console.log(text.dataset.accordionIndexText);
+
+        if(event.target.dataset.accordionIndexLink===text.dataset.accordionIndexText){
+            text.classList.toggle('accordeon-show-text')
+            link.classList.toggle('accordeon-link-active')
+        }
+    })
+}
+for (let i = 0; i < accordeonLinks.length; i++) {
+    accordeonLinks[i].dataset.accordionIndexLink=i
+    accordeonText[i].dataset.accordionIndexText=i
+    showText(accordeonLinks[i],accordeonText[i])
+}

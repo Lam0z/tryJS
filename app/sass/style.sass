@@ -157,7 +157,6 @@ img
             background: red  url('https://sebweo.com/wp-content/uploads/2019/06/landshaft-bernskikh-alp-v-yasniy-den_thumb.jpg') center / cover
 .hidden
     opacity: 0
-    
 .active
     opacity: 1
     transform: translateY(0)
@@ -165,12 +164,48 @@ img
     color: white
     font-weight: bold
 
+
+
+
+.accordeon 
+    // background: pink
+    
+    &__container
+        margin: 0
+        padding: 0 
+        position: relative
+        // display: flex
+        // flex-wrap: wrap
+    
+    &__link
+        padding: 5px
+        background: pink
+        border-top-right-radius: 10px
+        border-top-left-radius: 10px
+        cursor: pointer
+        margin-bottom: 10px
+        text-align: center
+        transition: .5s all
+        &:hover
+            background: lighten(pink,5)
+    &__text 
+        padding: 5px
+        background: lighten(pink,5)
+        border-bottom-right-radius: 10px
+        border-bottom-left-radius: 10px
+        transform: translateY(-35px)
+        display: none
+        transition: .5s all
+        
+.accordeon-link-active
+    margin-bottom: 0
+    background: grey
+.accordeon-show-text
+    transform: translateY(0)
+    display: block
+
+        
+
+
     
 
-
-
-
-
-
-
-    
