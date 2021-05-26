@@ -4,6 +4,7 @@
     // color: white
     
 body
+    
     // background: green radial-gradient(black,green)
     // text-align: center
     // height: 100vh
@@ -95,6 +96,7 @@ img
     overflow: hidden
     display: grid
     grid-template-rows: 1fr auto
+    transition: 1s all
     &__container
         display: flex
         
@@ -113,10 +115,56 @@ img
         // grid-column: 2/3
         // grid-row: 2/3
         // justify-self: center
-        
-        
+.simple-slider 
+    min-height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    &__links 
+        position: absolute
+        z-index: 2
+        display: flex
+        flex-direction: column 
+    &__link 
+        color: white
+        font-size: 20px
+        &:hover
+            text-decoration: none
+            color: white
 
-.wrapper 
+
+    &__slides 
+        position: absolute
+        top: 0
+        left: 0
+        width: 100vw
+        height: 100vh
+
+    
+    &__slide 
+        position: fixed
+        width: 100vw
+        height: 100vh
+        transform: translateY(-2vh)
+        transition: .5s all
+        background: black url('https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg') center / cover
+        &:nth-child(2)
+            background: yellow url('http://fotorelax.ru/wp-content/uploads/2016/03/Beautiful-photos-and-pictures-on-various-subjects-01.jpg') center / cover
+        &:nth-child(3)
+            background: blue url('https://www.cruzo.net/user/images/k/ecc3ecf42c75db1ffce5d06cbe95b1e6_644.jpg') center / cover
+        &:nth-child(4)
+            background: red  url('https://sebweo.com/wp-content/uploads/2019/06/landshaft-bernskikh-alp-v-yasniy-den_thumb.jpg') center / cover
+.hidden
+    opacity: 0
+    
+.active
+    opacity: 1
+    transform: translateY(0)
+.active-link
+    color: white
+    font-weight: bold
+
     
 
 
